@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='UTF-8'>
+
+	<!-- Javascript SDKs-->
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
+	<script src="js/amazon-cognito-auth.min.js"></script>
+	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script> 
+	<script src="js/amazon-cognito-identity.min.js"></script>   
+	<script src="js/config.js"></script>
+	<script src="js/global_scripts.js"></script>
+	<script src="js/registration_scripts.js"></script>
+	<link rel="stylesheet" href="style.css">
+
+	<title>Create User</title>
+	<img src="backtracklogo.png">
+	<div class="topnav">
+  	<a href="user_profile.html">User Profile</a>
+  	<a class="active" href="registration.html">Create User</a>
+  	<a onClick='sign_out()'>Log out</a>
+	</div>
+	<h2>Create a user</h2>
+
+</head>
+<body onLoad='uncheck()'>
+
+	<fieldset id='admininfo'>
+		<legend>Admin User Creation</legend>
+		<label for='fname'>First Name</label> <input type='text' id='fname' name='fname' placeholder='John' required><br>
+		<label for='lname'>Last Name </label> <input type='text' id='lname' name='lname' placeholder='Doe' required><br><br>
+		<label for='inputEmail'>Email </label> <input type='text' id='inputEmail' name='inputEmail' placeholder='john.doe@gmail.com' required><br>
+	</fieldset>
+
+	<fieldset id='userinfo'>
+		<legend>Device User Creation</legend>
+		<label for='LocId'>Location ID</label> <input type='text' placeholder="e.g.MAN8" id='LocId' name='LocId' onChange='prePopulate()'><br>
+		<label for='id'>Serial no. </label> <input type='text' id='id' name='id' placeholder='e.g. 5058' onChange='prePopulate()'><br><br>
+		<button type="button" value='population' onClick='prePopulate()'>Populate Login</button><br><br>
+		<label for='inputUsername'>Username </label> <input type='text' id='inputUsername' name='device_username' placeholder='e.g. 5058@MAN8' required><br><br>
+
+		<input type='checkbox' id='require_login' name='require_login' value='yes' onclick='showHideUserLogin()'>
+		<label for='require_login'>does this user require a login? </label><br>
+
+		<fieldset id='userlogin'>
+   			<label for='inputEmail'>Email </label> <input type='email' id='inputEmail' name='inputEmail' placeholder="e.g. john.doe@gmail.com"><br>
+		</fieldset>
+
+	</fieldset>
+
+	<input type='checkbox' id='admin' name='admin' value='yes' onclick='showHideInfo()'>
+	<label for='admin'>Admin User</label>
+
+	<script>document.getElementById('admininfo').style.display='none'</script>
+	<script>document.getElementById('userlogin').style.display='none'</script>
+
+	<br><br>
+
+	<button id="mainbutton" class="btn btn-lg btn-primary btn-block" type="button" onclick="registerButtonPasswordless()">Register user</button>
+
+
+</body>
+</html>

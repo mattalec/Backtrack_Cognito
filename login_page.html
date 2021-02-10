@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='UTF-8'>
+
+	<!-- Javascript SDKs-->
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
+	<script src="js/amazon-cognito-auth.min.js"></script>
+	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script> 
+	<script src="js/amazon-cognito-identity.min.js"></script>   
+	<script src="js/config.js"></script>
+	<script src="js/global_scripts.js"></script>
+	<script src="js/login_page_scripts.js"></script>
+	<link rel="stylesheet" href="style.css">
+
+	<title>Login Page</title>
+	<img src="backtracklogo.png">
+	<div class="topnav">
+  	<a class="active" href="login#">Login</a>
+	</div>
+	<h2>Login</h2>
+
+</head>
+<body>
+
+	<fieldset id='userinfo'>
+		<legend>Device User Login</legend>
+		<label for='inputUsername'>Username </label> <input type='text' id='InputUsername' name='Device_username' placeholder='e.g. 5058@MAN8' required><br>
+		<label for='inputPassword'>Password </label> <input type='password' id='InputPassword' name='Device_password' placeholder="Google_mail12" required><br>
+	</fieldset>
+	<br>
+	<button type="button" onclick="signingIn()">Sign in</button>
+	<button type='button' onclick='forgotpasswordbutton()'>Forgot Password</button>
+
+</body>
+</html>

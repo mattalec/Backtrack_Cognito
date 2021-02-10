@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='UTF-8'>
+
+	<!-- Javascript SDKs-->
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
+	<script src="js/amazon-cognito-auth.min.js"></script>
+	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script> 
+	<script src="js/amazon-cognito-identity.min.js"></script>   
+	<script src="js/config.js"></script>
+	<script src="js/global_scripts.js"></script>
+	<script src="js/user_profile.js"></script>
+	<link rel="stylesheet" href="style.css">
+
+	<title>User Profile</title>
+	<img src="backtracklogo.png">
+	<div class="topnav">
+  	<a class="active" href="user_profile.html">User Profile</a>
+  	<a href="registration.html" id="createUser">Create User</a>
+  	<a onClick='sign_out()'>Log out</a>
+	</div>
+	<h2>User Profile</h2>
+
+</head>
+
+<body>
+
+	<fieldset id='admininfo'>
+		<legend>Admin User Profile</legend>
+		<label for='fname'>First Name : </label> 
+		<label id='fname_value'></label>
+		<br>
+
+		<label for='lname'>Last Name : </label> 
+		<label id='lname_value'></label>
+		<br>
+		<label for='inputEmail'>Email : </label>
+		<label id='adminEmail_value'></label>
+	</fieldset>
+
+	<fieldset id='userinfo'>
+		<legend>Device User Profile</legend>
+		<label for='inputUsername'>Username : </label> 
+		<label id='username_value'></label>
+		<br>
+		<label for='inputEmail'>Email : </label>
+		<label id='email_value'></label>
+	</fieldset>
+	
+	<script>window.onload = getUserAttr()</script>
+
+</body>
+</html>
